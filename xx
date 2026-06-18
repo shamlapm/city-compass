@@ -1,8 +1,0 @@
-function getLocation() {
-
-    alert("Button Clicked");
-
-    const output = document.getElementById("location");
-
-    output.innerHTML = "JavaScript Working!";
-}
