@@ -9,15 +9,17 @@ function getLocation() {
             function(position) {
 
                 output.innerHTML =
+                "<b>Location Detected Successfully!</b><br><br>" +
                 "Latitude: " + position.coords.latitude +
-                "<br>Longitude: " + position.coords.longitude;
+                "<br>" +
+                "Longitude: " + position.coords.longitude;
 
             },
 
-            function() {
+            function(error) {
 
                 output.innerHTML =
-                "Unable to retrieve location.";
+                "Location permission denied or unavailable.";
 
             }
 
@@ -26,8 +28,7 @@ function getLocation() {
     } else {
 
         output.innerHTML =
-        "Geolocation is not supported.";
+        "Geolocation is not supported by this browser.";
 
     }
-
 }
