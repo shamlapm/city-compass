@@ -1,15 +1,33 @@
-function getLocation(){
+function getLocation() {
 
-navigator.geolocation.getCurrentPosition(
+    const output = document.getElementById("location");
 
-function(position){
+    if (navigator.geolocation) {
 
-document.getElementById("location").innerHTML =
-"Latitude: " + position.coords.latitude +
-"<br>Longitude: " + position.coords.longitude;
+        navigator.geolocation.getCurrentPosition(
 
-}
+            function(position) {
 
-);
+                output.innerHTML =
+                "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+
+            },
+
+            function() {
+
+                output.innerHTML =
+                "Unable to retrieve location.";
+
+            }
+
+        );
+
+    } else {
+
+        output.innerHTML =
+        "Geolocation is not supported.";
+
+    }
 
 }
