@@ -1,38 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CityCompass</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+    <section class="hero">
 
-    <h1>CityCompass</h1>
+        <div class="content">
+            <h1>CityCompass</h1>
 
-    <p>Discover nearby places around your location</p>
+            <p>
+                Discover nearby restaurants, hospitals, cafes,
+                ATMs and parks around your location.
+            </p>
 
-    <button onclick="getLocation()">
-        Find My Location
-    </button>
+            <button onclick="getLocation()">
+                Find My Location
+            </button>
 
-    <br><br>
+            <p id="location"></p>
+        </div>
 
-    <button>Restaurants</button>
-    <button>Hospitals</button>
-    <button>Cafes</button>
-    <button>ATMs</button>
+    </section>
 
-    <p id="location"></p>
+    <section class="services">
 
-    <div id="map">
-        Map will be displayed here
-    </div>
+        <h2>Explore Nearby Services</h2>
 
-</div>
+        <div class="cards">
 
-<script src="script.js"></script>
+            <div class="card">
+                <h3>Restaurants</h3>
+                <p>Find nearby restaurants</p>
+            </div>
+
+            <div class="card">
+                <h3>Hospitals</h3>
+                <p>Locate nearby hospitals</p>
+            </div>
+
+            <div class="card">
+                <h3>Cafes</h3>
+                <p>Discover local cafes</p>
+            </div>
+
+            <div class="card">
+                <h3>ATMs</h3>
+                <p>Find nearby ATMs</p>
+            </div>
+
+            <div class="card">
+                <h3>Parks</h3>
+                <p>Explore green spaces</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
