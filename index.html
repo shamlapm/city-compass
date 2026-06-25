@@ -1,21 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CityCompass</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CityCompass</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </head>
+
 <body>
 
 <nav>
-    <div class="logo">CityCompass</div>
+
+<div class="logo">
+
+CityCompass
+
+</div>
 
 <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#map-section">Map</a></li>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#map-section">Map</a></li>
+
 </ul>
 
 </nav>
@@ -24,20 +43,27 @@
 
 <div class="overlay">
 
-    <h1>CityCompass</h1>
+<h1>CityCompass</h1>
 
-    <h2>Discover Nearby Places Around You</h2>
+<h2>
 
-    <p>
-        Find Restaurants, Hospitals, Cafes, ATMs and Parks
-        around your location.
-    </p>
+Discover Nearby Places Around You
 
-    <button onclick="getLocation()">
-        Find My Location
-    </button>
+</h2>
 
-    <p id="location"></p>
+<p>
+
+Find Restaurants, Hospitals, Cafes, Parks and ATMs
+
+</p>
+
+<button onclick="findMyLocation()">
+
+Find My Location
+
+</button>
+
+<p id="status"></p>
 
 </div>
 
@@ -45,60 +71,97 @@
 
 <section id="services" class="services">
 
-<h2>Explore Nearby Services</h2>
+<h2>
+
+Nearby Services
+
+</h2>
 
 <div class="cards">
 
-    <a class="card" target="_blank"
-    href="https://www.google.com/maps/search/restaurants+near+me">
-        <h3>🍽️ Restaurants</h3>
-        <p>Find Nearby Restaurants</p>
-    </a>
+<button class="card" onclick="searchNearby('restaurant')">
 
-    <a class="card" target="_blank"
-    href="https://www.google.com/maps/search/hospitals+near+me">
-        <h3>🏥 Hospitals</h3>
-        <p>Locate Nearby Hospitals</p>
-    </a>
+🍽
 
-    <a class="card" target="_blank"
-    href="https://www.google.com/maps/search/cafes+near+me">
-        <h3>☕ Cafes</h3>
-        <p>Discover Local Cafes</p>
-    </a>
+<h3>Restaurants</h3>
 
-    <a class="card" target="_blank"
-    href="https://www.google.com/maps/search/atms+near+me">
-        <h3>🏧 ATMs</h3>
-        <p>Find Nearby ATMs</p>
-    </a>
+</button>
 
-    <a class="card" target="_blank"
-    href="https://www.google.com/maps/search/parks+near+me">
-        <h3>🌳 Parks</h3>
-        <p>Explore Green Spaces</p>
-    </a>
+<button class="card" onclick="searchNearby('hospital')">
+
+🏥
+
+<h3>Hospitals</h3>
+
+</button>
+
+<button class="card" onclick="searchNearby('cafe')">
+
+☕
+
+<h3>Cafes</h3>
+
+</button>
+
+<button class="card" onclick="searchNearby('atm')">
+
+🏧
+
+<h3>ATMs</h3>
+
+</button>
+
+<button class="card" onclick="searchNearby('park')">
+
+🌳
+
+<h3>Parks</h3>
+
+</button>
 
 </div>
 
 </section>
 
-<section id="map-section" class="map-section">
+<section id="map-section">
 
-<h2>Location Map</h2>
+<h2>
 
-<div class="map-box">
-    Location coordinates and map integration area.
-Current deployment is running on EC2.
+Interactive Map
+
+</h2>
+
+<div id="map"></div>
+
+</section>
+
+<section class="info">
+
+<h2>
+
+Selected Place
+
+</h2>
+
+<div id="place-info">
+
+Click <b>Find My Location</b> and then choose a service.
+
 </div>
 
 </section>
 
 <footer>
-    <p>© 2026 CityCompass | AWS EC2 | Jenkins CI/CD</p>
+
+© 2026 CityCompass |
+AWS EC2 |
+Jenkins CI/CD |
+Geoapify API
+
 </footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
